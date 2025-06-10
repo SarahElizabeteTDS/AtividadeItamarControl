@@ -6,10 +6,11 @@ error_reporting(E_ALL);
 class Creator 
 {
     private $con;
-    private $servidor ;
+    private $servidor;
     private $banco;
     private $usuario;
     private $senha;
+
 
     function __construct() 
     {
@@ -72,9 +73,40 @@ class Creator
         file_put_contents("sistema/model/Conexao.php", $conteudo);
     }
 
+    //CLASSES DAO METADE FEITAS
 
+    // function ClassesDAO()
+    // {
+    //     if (!file_exists("sistema")) 
+    //     {
+    //         mkdir("sistema");
+    //         if (!file_exists("sistema/DAO"))
+    //             mkdir("sistema/DAO");
+    //     }
+    //     $sql = "SHOW TABLES";
+    //     $query = $this->con->query($sql);
+    //     $tabelas = $query->fetchAll(PDO::FETCH_ASSOC);
+        
+    //     foreach($tabelas as $tabela)
+    //     {
+    //         $nomeTabela = array_values((array) $tabela)[0];
+            
+    //         $nomeTabela = ucfirst($nomeTabela);
+    //         $conteudo = <<<EOT
+    //         <?php
+    //         class {$nomeTabela}DAO
+    //         {
+    //             private \$con;
 
-
+    //             function __construct()
+    //             {
+    //                 include_once("Conexao.php");
+    //                 \$conexao = new Conexao();
+    //                 \$this->con = \$conexao->conectar();}
+    //         }
+    //         EOT;
+    //     }
+    // }
 
     function ClassesModel() 
     {
